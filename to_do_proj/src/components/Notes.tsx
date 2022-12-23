@@ -1,6 +1,4 @@
-import React, {useEffect} from 'react';
-import {deleteAllNotesThunk} from "../Redux/Reducers/AppReducer";
-import {arrayBuffer} from "stream/consumers";
+import React from 'react';
 
 const Notes = ({Notes, deleteNoteThunk}: any) => {
 

@@ -1,5 +1,4 @@
 import axios from "axios";
-import {response} from "express";
 
 const instance = axios.create({
     baseURL: "http://localhost:5000/"
@@ -7,7 +6,7 @@ const instance = axios.create({
 
 export const DefaultApi = {
     getLists() {
-        return instance.get(`api/list/all`)
+        return instance.get(`api/list`)
     },
     postList(text: string) {
         return instance.post(`api/list`, {text: text}).then(response => response.data)

@@ -30,8 +30,11 @@ class ListController {
     }
 
     async getOne(req, res) {
-        const query = req.query
-        res.json(query)
+
+        const {id} = req.query
+        const {text} = req.query
+        const list = await List.findOne({where: {id}})
+        res.json(list)
     }
 }
 

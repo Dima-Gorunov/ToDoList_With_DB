@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import Test from "./Test";
 import {
@@ -10,7 +10,7 @@ import {
     setDataFromServerThunk,
     setDataOnServerThunk,
     sortNodes
-} from "../Redux/Reducers/AppReducer";
+} from '../ToolkitRedux/Reducers/AppReducer';
 
 
 const TestContainer = (props: any) => {
@@ -18,7 +18,7 @@ const TestContainer = (props: any) => {
         props.setDataFromServerThunk()
     })
     if (!props.Initial) {
-        return <div>INITIAL</div>
+        return <div style={{color: "white"}}>The server - not started</div>
     }
     return (
         <Test {...props} />
@@ -39,7 +39,7 @@ let mapStateToProps = (state: any) => {
     }
 }
 
-export default connect(mapStateToProps, {
+export default  connect(mapStateToProps, {
     changeInput,
     addNotesThunk,
     deleteNoteThunk,

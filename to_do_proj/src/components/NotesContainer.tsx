@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Notes from "./Notes";
 import {connect} from "react-redux";
-import {deleteNoteThunk} from '../Redux/Reducers/AppReducer';
-import {safeAssign} from "@reduxjs/toolkit/dist/query/tsHelpers";
+import { deleteNoteThunk } from '../ToolkitRedux/Reducers/AppReducer';
+
 
 const NotesContainer = (props: any) => {
     return (

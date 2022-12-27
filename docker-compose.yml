@@ -5,7 +5,11 @@ services:
     image: postgres:latest
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=dima
+      - POSTGRES_PASSWORD=2001ah2002
+      - POSTGRES_DB=my_db_list
     volumes:
       - ./database_data:/var/lib/postgresql/data
   client:
@@ -22,11 +26,12 @@ services:
     ports:
       - "5000:5000"
     restart: always
+    command: yarn start
     environment:
       - EXTERNAL_PORT=5000
-      - PGDATABASE=to_do_list
-      - PGUSER=postgres
-      - PGPASSWORD=root
+      - PGDATABASE=my_db_list
+      - PGUSER=dima
+      - PGPASSWORD=2001ah2002
       - PGHOST=postres_db
     depends_on:
       - postres_db
